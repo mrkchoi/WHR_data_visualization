@@ -12,50 +12,46 @@
 
   <link rel="stylesheet" href="./dist/stylesheets/style.css">
 
-  <title>City Data</title>
+  <title>World Happiness Report | Data Visualization</title>
 </head>
 <body>
   <div class="main__container--full">
     <div class="main__container--inner">
       <div class="header__container">
         <div class="header__content">
-          <h1 class="main__header">Happiest Cities in America</h1>     
-          <p class="main__description">
-            Social scientists and researchers are moving away from traditional metrics such as GDP to rank regional quality of living. Other factors like family, friends, entertainment and work, may play a greater role in determining how joyful our lives actually are.
+          <h1 class="main__header">World Happiness Report</h1>     
+          <!-- <p class="main__description">
+            The World Happiness Report is a landmark survey of the state of global happiness that ranks 156 countries by how happy
+            their citizens perceive themselves to be.
           </p>
           <p class="main__description">
-            This 2019 study, conducted by NerdWallet, aggregates 31 key metrics including depression rates, income-growth rate and
-            average leisure time spent per day, to rank the happiest cities in the United States.
-          </p>
-          </p>
+            This year’s World Happiness Report focuses on happiness and the community: how happiness has evolved over the past dozen years, with a focus on the technologies, social norms, conflicts and government policies that have driven those changes.
+          </p> -->
         </div>
-        <div class="header__tooltip">
-          
+        <div class="header">
+          <div class="header__link-wrapper">
+            <a href="https://www.linkedin.com/in/kenneth-choi-42502a35/" class="header__link" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/mrkchoi/city_visualizer" target="_blank" class="header__link">
+              <i class="fab fa-github-square"></i>
+            </a>
+          </div>
         </div>
-
       </div>
 
-      <div class="map__container">
-        <svg class="map"></svg>
-        <img src="dist/assets/images/us_map_outline-resized.png" alt="Outline map of United States" class="map__background">
+      <div class="graph__container">
+        <svg class="graph"></svg>
+        <!-- <img src="dist/assets/images/us_map_outline-resized.png" alt="Outline map of United States" class="map__background"> -->
       </div>
       
       <div class="sources">
         <p class="source__content">
-          Data provided by <a href="https://wallethub.com/edu/happiest-places-to-live/32619/" target="_blank" class="source__link">NerdWallet</a><br />Visualization created by Kenneth Choi
+          Data provided by <a href="https://worldhappiness.report/ed/2019/" target="_blank" class="source__link">World Happiness Report</a><br />Visualization created by Kenneth Choi
         </p>
         <br />
       </div>
-      <footer class="footer">
-        <div class="footer__link-wrapper">
-          <a href="https://www.linkedin.com/in/kenneth-choi-42502a35/" class="footer__link" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/mrkchoi/city_visualizer" target="_blank" class="footer__link">
-            <i class="fab fa-github-square"></i>
-          </a>
-        </div>
-      </footer>
+
     </div>  
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>

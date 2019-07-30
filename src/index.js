@@ -1,11 +1,11 @@
 // import _ from 'lodash';
 
 import Filter from './filter';
-import Map from './map';
+import WorldGraph from "./world_graph";
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  new Map('svg.map');
-  new Filter;
+  new WorldGraph("svg.graph");
+  // new Filter;
 });

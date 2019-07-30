@@ -430,6 +430,6 @@ export const ANIMATION_DURATION = 1000;
 export const ANIMATION_DELAY = 0;
 export const ANIMATION_EASING = d3.easePoly;
 
-export const WIDTH = 972;
-export const HEIGHT = 564;
+export const WIDTH = 1000;
+export const HEIGHT = 700;
 export const MARGINS = 100;

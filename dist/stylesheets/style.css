@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* main */
 .main__container--inner {
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -42,17 +42,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 10px;
 }
 
-.map__container {
+.graph__container {
   position: relative;
 }
 
 /* svg */
-.map__container svg {
+.graph__container svg {
   position: absolute;
   cursor: pointer;
+  padding-top: 2rem;  
 }
 
-.map__background {
+.graph {}
+
+.graph__background {
   width: 100%;
 }
 
@@ -114,20 +117,20 @@ p.tooltip__detail {
   position: relative;
 }
 
-/* footer */
+/* header */
 
-.footer {
+.header {
   z-index: 99999;
   position: relative;
 }
-.footer__link {
+.header__link {
   color: black;
   transition: all 100ms ease-in;
 }
 
-.footer__link:hover {
+.header__link:hover {
   color: #777;
 }
-.footer__link i {
+.header__link i {
   font-size: 2rem;
 }
