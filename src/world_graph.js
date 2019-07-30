@@ -54,29 +54,30 @@ class WorldGraph extends Chart {
   circles() {
     // debugger;
     this.chart
-      .selectAll('circle')
+      .selectAll("circle")
       .data(Object.values(this.data))
       .enter()
       .append("circle")
       // .append("g")
       .attr("class", d => `city ${d.class}`)
       .attr("fill", d => {
-        if (d.continent === 'Africa') {
-          return "red";
-        } else if (d.continent === 'Asia') {
-          return "blue";
-        } else if (d.continent === 'North America') {
-          return "orange";
+        if (d.continent === "Africa") {
+          return "#7cbd1e";
+        } else if (d.continent === "Asia") {
+          return "#ff1f5a";
+        } else if (d.continent === "North America") {
+          return "#303481";
         } else if (d.continent === "South America") {
-          return "green";
+          return "#ff5b44";
         } else if (d.continent === "Europe") {
-          return "purple";
+          return "#2fc5cc";
         } else {
           return "red";
         }
       })
-      .attr('opacity', ".4")
-      .attr('border', '1px solid grey')
+      .attr("opacity", ".7")
+      .attr("stroke", "#CDCDCD")
+      .attr("stroke-width", "2px")
       // .selectAll()
       // .data(d => d)
       // .enter()
@@ -94,12 +95,12 @@ class WorldGraph extends Chart {
         } else if (d.population > 1000000) {
           return d.population / 2500000;
         } else {
-          return d.population / 250000;
+          return d.population / 100000;
         }
       })
       .attr("cy", d => {
         // return 100;
-        return this.yScale(d.graphRanking / 156)
+        return this.yScale(d.graphRanking / 156);
       });
   }
 
