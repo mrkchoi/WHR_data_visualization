@@ -10,9 +10,8 @@ import {
 class Chart {
   constructor(selector, options) {
     this.setChart(selector, options);
-    this.getData();
+    // this.getData();
     this.setLabels();
-    // this.data = null;
   }
 
   setChart(selector, options = { topOffset: 0, leftOffset: 0 }) {
@@ -29,15 +28,19 @@ class Chart {
       );
   }
 
-  getData() {
-    let that = this;
-    d3.json("/dist/data/countries.json").then(data => {
-      that.setData(data);
-    });
-  }
-
   setData(data) {
     this.data = data;
+  }
+
+  redraw(selector) {
+    // let graphDiv = document.querySelector("svg.graph");
+    let width = window.innerWidth;
+    console.log(`new width: ${width}`)
+    let height = window.innerHeight;
+    console.log(`new height: ${height}`)
+    d3.select(selector)
+      .attr('width', width + MARGINS * 2)
+      .attr('height', height + MARGINS * 2);
   }
 
   xAxis(ticks = 20, tickFormat = () => {}) {
@@ -90,52 +93,52 @@ class Chart {
       .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", -65)
-      .attr("x", -350)
+      .attr("x", -300)
       .attr("font-size", "20px")
       .attr("text-anchor", "middle")
       .text("Happiness Index (%)");
   }
 
-  gridLines(scale, position, ticks = 5) {
-    this.chart
-      .append("g")
-      .attr("class", "grid")
-      .call(d3[position])()
-      .scale(scale)
-      .tickSize(WIDTH, 0, 0)
-      .tickFormat("")
-      .ticks(ticks);
-  }
+  // gridLines(scale, position, ticks = 5) {
+  //   this.chart
+  //     .append("g")
+  //     .attr("class", "grid")
+  //     .call(d3[position])()
+  //     .scale(scale)
+  //     .tickSize(WIDTH, 0, 0)
+  //     .tickFormat("")
+  //     .ticks(ticks);
+  // }
 
-  rectangleLabels(text) {
-    this.chart
-      .selectAll()
-      .data(this.sortedData)
-      .enter()
-      .append("text")
-      .attr("class", d => `city ${d.class} bar-label city-data-toggle`)
-      .attr("x", 5)
-      .attr("y", d => this.yScale(d.city) - 2)
-      .style("fill", "#fff")
-      .text((d, i) => {
-        if (typeof text === "string") {
-          return d[text];
-        } else {
-          return text.call(d, i);
-        }
-      })
-      .style("opacity", 0);
-  }
+  // rectangleLabels(text) {
+  //   this.chart
+  //     .selectAll()
+  //     .data(this.sortedData)
+  //     .enter()
+  //     .append("text")
+  //     .attr("class", d => `city ${d.class} bar-label city-data-toggle`)
+  //     .attr("x", 5)
+  //     .attr("y", d => this.yScale(d.city) - 2)
+  //     .style("fill", "#fff")
+  //     .text((d, i) => {
+  //       if (typeof text === "string") {
+  //         return d[text];
+  //       } else {
+  //         return text.call(d, i);
+  //       }
+  //     })
+  //     .style("opacity", 0);
+  // }
 
-  labelTop(text) {
-    this.chart
-      .append("text")
-      .attr("class", "label-text")
-      .attr("text-anchor", "middle")
-      .attr("x", WIDTH / 2)
-      .attr("y", -20)
-      .text(text);
-  }
+  // labelTop(text) {
+  //   this.chart
+  //     .append("text")
+  //     .attr("class", "label-text")
+  //     .attr("text-anchor", "middle")
+  //     .attr("x", WIDTH / 2)
+  //     .attr("y", -20)
+  //     .text(text);
+  // }
 }
 
 export default Chart;

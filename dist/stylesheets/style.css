@@ -53,7 +53,13 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 2rem;  
 }
 
-.graph {}
+svg.graph {
+  /* position: fixed !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+}
 
 .graph__background {
   width: 100%;
