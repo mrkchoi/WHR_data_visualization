@@ -1,0 +1,133 @@
+/* global */
+body {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  background-color: #FFF6D5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+
+/* main */
+.main__container--inner {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.header__content {
+  flex: 1;
+  padding-right: 3rem;  
+  max-width: 650px;
+}
+.header__tooltop {
+  /* flex: 1; */
+  min-width: 320px;
+}
+.main__header {
+  font-size: 4rem;
+  color: initial;
+  transition: all 100ms ease-in;
+}
+
+.main__description {
+  font-family: "Lora", sans-serif;
+  margin-bottom: 10px;
+}
+
+.map__container {
+  position: relative;
+}
+
+/* svg */
+.map__container svg {
+  position: absolute;
+  cursor: pointer;
+}
+
+.map__background {
+  width: 100%;
+}
+
+text {
+  fill: #777;
+  font-size: 12px;
+}
+
+.map-city-label {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.label-text {
+  font-size: 12px;
+  font-weight: 700;
+  fill: white;
+}
+
+.city {
+  cursor: pointer;
+  z-index: 100;
+  transition: all 100ms ease-in;
+}
+
+text.city {
+  z-index: 10;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0) }
+  to { transform: translateY(-2px) }
+}
+
+.city-pinpoint {
+  animation: bounce 0.5s infinite;
+  animation-direction: alternate;
+  transform-origin: 50% 50% 0;
+}
+
+
+/* filter */
+.filter {
+  opacity: 0.1;
+}
+
+
+/* tooltip */
+p.tooltip__detail {
+  margin-bottom: 5px;
+}
+.tooltip__inner {
+  /* font-weight: bold; */
+}
+
+/* sources */
+.sources {
+  z-index: 99999;
+  position: relative;
+}
+
+/* footer */
+
+.footer {
+  z-index: 99999;
+  position: relative;
+}
+.footer__link {
+  color: black;
+  transition: all 100ms ease-in;
+}
+
+.footer__link:hover {
+  color: #777;
+}
+.footer__link i {
+  font-size: 2rem;
+}
