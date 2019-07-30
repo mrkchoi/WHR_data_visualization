@@ -1,6 +1,7 @@
 import {
   WIDTH, 
   HEIGHT,
+  ANIMATION_DELAY,
   ANIMATION_EASING,
   ANIMATION_DURATION,
 } from './constants';
@@ -13,70 +14,114 @@ class WorldGraph extends Chart {
     this.svg = d3.select(selector);
     this.xAxis();
     this.yAxis([1, 0], "scaleLinear", 20, () => d3.format(".0%"));
-    this.circles();
-    this.percentageLabels();
-    this.labelTop("Happiness Ranking");
-    this.gridLines(this.xScale, "axisBottom");
-    this.gridLines(this.yScale, "axisRight");
+    this.getData();
+    // this.lines();
+    // this.circles();
+    // this.percentageLabels();
+    // this.labelTop("Happiness Ranking");
+    // this.gridLines(this.xScale, "axisBottom");
+    // this.gridLines(this.yScale, "axisRight");
   }
 
-  lines() {
-    let line = d3
-      .line()
-      .x(d => this.xScale(d.ethnicity))
-      .y(d => this.yScale(d.percentage));
-
-    this.chart
-      .selectAll(".line")
-      .data(Object.values(this.data))
-      .enter()
-      .append("path")
-      .attr("transform", "translate(25, 5)")
-      .attr("class", d => `line city ${d.class}`)
-      .attr("d", d => line(d.diversity))
-      .style("stroke", d => d.color)
-      .style("stroke-width", 2)
-      .style("stroke-linecap", "round");
+  getData() {
+    let that = this;
+    d3.json("/dist/data/countries.json").then(data => {
+      that.setData(data);
+      // that.lines();
+      that.circles();
+      // that.percentageLabels();
+    });
   }
+  // lines() {
+  //   let line = d3
+  //     .line()
+  //     .x(d => this.xScale(d.graphRanking))
+  //     .y(d => this.yScale(d.graphGdp));
+  //   debugger
+  //   this.chart
+  //     .selectAll(".line")
+  //     .data(Object.values(this.data))
+  //     .enter()
+  //     .append("path")
+  //     .attr("transform", "translate(25, 5)")
+  //     .attr("class", d => `line city ${d.class}`)
+  //     .attr("d", d => line(d.diversity))
+  //     .style("stroke", d => d.color)
+  //     .style("stroke-width", 2)
+  //     .style("stroke-linecap", "round");
+  // }
 
   circles() {
+    // debugger;
     this.chart
-      .selectAll()
+      .selectAll('circle')
       .data(Object.values(this.data))
       .enter()
-      .append("g")
-      .attr("class", d => `city ${d.class}`)
-      .attr("fill", d => d.color)
-      .selectAll()
-      .data(d => d.diversity)
-      .enter()
       .append("circle")
-      .attr("cx", d => this.xScale(d.ethnicity) + 25)
+      // .append("g")
+      .attr("class", d => `city ${d.class}`)
+      .attr("fill", d => {
+        if (d.continent === 'Africa') {
+          return "red";
+        } else if (d.continent === 'Asia') {
+          return "blue";
+        } else if (d.continent === 'North America') {
+          return "orange";
+        } else if (d.continent === "South America") {
+          return "green";
+        } else if (d.continent === "Europe") {
+          return "purple";
+        } else {
+          return "red";
+        }
+      })
+      .attr('opacity', ".4")
+      .attr('border', '1px solid grey')
+      // .selectAll()
+      // .data(d => d)
+      // .enter()
+      .attr("cx", d => {
+        // return 100;
+        return this.xScale(d.graphGdp / 156) + 25;
+      })
       .transition()
       .delay((d, i) => i * ANIMATION_DELAY)
       .duration(ANIMATION_DURATION)
       .ease(ANIMATION_EASING)
-      .attr("r", 3)
-      .attr("cy", d => this.yScale(d.percentage));
+      .attr("r", d => {
+        if (d.population > 100000000) {
+          return d.population / 25000000;
+        } else if (d.population > 1000000) {
+          return d.population / 2500000;
+        } else {
+          return d.population / 250000;
+        }
+      })
+      .attr("cy", d => {
+        // return 100;
+        return this.yScale(d.graphRanking / 156)
+      });
   }
 
-  percentageLabels() {
-    this.chart
-      .selectAll()
-      .data(() => Object.values(this.data))
-      .enter()
-      .append("g")
-      .attr("class", d => `city ${d.class} city-data-toggle`)
-      .selectAll(".line-point")
-      .data(d => d.diversity)
-      .enter()
-      .append("text")
-      .attr("text-anchor", "middle")
-      .text(d => d3.format(".0%")(d.percentage))
-      .attr("x", d => this.xScale(d.ethnicity) + 25)
-      .attr("y", d => this.yScale(d.percentage) - 10)
-      .style("fill", "white");
-  }
+  // percentageLabels() {
+  //   // debugger;
+
+  //   this.chart
+  //     .selectAll()
+  //     .data(() => Object.values(this.data))
+  //     .enter()
+  //     .append("g")
+  //     .attr("class", d => `city ${d.class} city-data-toggle`)
+  //     .selectAll(".line-point")
+  //     .data(d => d.diversity)
+  //     .enter()
+  //     .append("text")
+  //     .attr("text-anchor", "middle")
+  //     .text(d => d3.format(".0%")(d.percentage))
+  //     .attr("x", d => this.xScale(d.ethnicity) + 25)
+  //     .attr("y", d => this.yScale(d.percentage) - 10)
+  //     .style("fill", "white");
+  // }
 }
 
 export default WorldGraph;

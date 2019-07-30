@@ -12,7 +12,7 @@ class Chart {
     this.setChart(selector, options);
     this.getData();
     this.setLabels();
-    this.data = null;
+    // this.data = null;
   }
 
   setChart(selector, options = { topOffset: 0, leftOffset: 0 }) {
@@ -30,7 +30,6 @@ class Chart {
   }
 
   getData() {
-    // this.data = CITIES;
     let that = this;
     d3.json("/dist/data/countries.json").then(data => {
       that.setData(data);
@@ -94,7 +93,7 @@ class Chart {
       .attr("x", -350)
       .attr("font-size", "20px")
       .attr("text-anchor", "middle")
-      .text("Life Expectancy (Years)");
+      .text("Happiness Index (%)");
   }
 
   gridLines(scale, position, ticks = 5) {
