@@ -27,31 +27,23 @@ class WorldGraph extends Chart {
     let that = this;
     d3.json("/dist/data/countries.json").then(data => {
       that.setData(data);
+      // that.setRadius();
       // that.lines();
       that.circles();
       // that.percentageLabels();
     });
   }
-  // lines() {
-  //   let line = d3
-  //     .line()
-  //     .x(d => this.xScale(d.graphRanking))
-  //     .y(d => this.yScale(d.graphGdp));
-  //   debugger
-  //   this.chart
-  //     .selectAll(".line")
-  //     .data(Object.values(this.data))
-  //     .enter()
-  //     .append("path")
-  //     .attr("transform", "translate(25, 5)")
-  //     .attr("class", d => `line city ${d.class}`)
-  //     .attr("d", d => line(d.diversity))
-  //     .style("stroke", d => d.color)
-  //     .style("stroke-width", 2)
-  //     .style("stroke-linecap", "round");
+
+  // setRadius() {
+
   // }
 
   circles() {
+
+    // let radius = d3
+    //   .scaleLinear()
+    //   .domain([10000, 1000000000])
+    //   .range([6, 50]);
     // debugger;
     this.chart
       .selectAll("circle")
@@ -59,7 +51,7 @@ class WorldGraph extends Chart {
       .enter()
       .append("circle")
       // .append("g")
-      .attr("class", d => `city ${d.class}`)
+      .attr("class", d => `country ${d.class} country-bubble`)
       .attr("fill", d => {
         if (d.continent === "Africa") {
           return "#7cbd1e";
@@ -90,13 +82,17 @@ class WorldGraph extends Chart {
       .duration(ANIMATION_DURATION)
       .ease(ANIMATION_EASING)
       .attr("r", d => {
-        if (d.population > 100000000) {
+        if (d.population > 800000000) {
           return d.population / 25000000;
+        } else if (d.population > 50000000) {
+          return d.population / 10000000;
         } else if (d.population > 1000000) {
-          return d.population / 2500000;
+          return d.population / 1500000;
         } else {
           return d.population / 100000;
         }
+        // debugger
+        // return radius(d.population);
       })
       .attr("cy", d => {
         // return 100;
