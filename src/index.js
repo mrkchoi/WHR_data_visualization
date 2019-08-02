@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     let currentBtn = e.target;
     let currentBtnClass = currentBtn.classList[0].split("-")[1];
-    // console.log(currentBtnClass);
     if (currentBtnClass !== 'group') {
       worldGraph.updateData(currentBtnClass);
     }
@@ -19,5 +18,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.onresize = () => {
   worldGraph.redraw("svg.graph");
-  // console.log('resized!');
 };

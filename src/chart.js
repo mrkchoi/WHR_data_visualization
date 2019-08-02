@@ -81,9 +81,10 @@ class Chart {
     var xLabel = this.chart
       .append("g")
       .append("text")
+      .attr("class", "x-axis-label")
       .attr("y", HEIGHT + 50)
       .attr("x", WIDTH / 2)
-      .attr("font-size", "20px")
+      .attr("font-size", "32px")
       .attr("text-anchor", "middle")
       .text("GDP Per Capita ($)");
     var yLabel = this.chart
@@ -92,7 +93,7 @@ class Chart {
       .attr("transform", "rotate(-90)")
       .attr("y", -65)
       .attr("x", -300)
-      .attr("font-size", "20px")
+      .attr("font-size", "32px")
       .attr("text-anchor", "middle")
       .text("Happiness Index (%)");
   }

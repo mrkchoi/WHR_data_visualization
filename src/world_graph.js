@@ -226,8 +226,27 @@ class WorldGraph extends Chart {
         .attr("cx", d => {
           return this.xScale(d[dataType] / 156) + 25;
         });
-        // .delay((d, i) => i * ANIMATION_DELAY)
+
+        this.updateAxisLabel(dataType);
     });
+  }
+
+  updateAxisLabel(type) {
+    // xLabel
+    console.log(type);
+    let label;
+    if (type === 'graphSocialSupport') {
+      label = 'Social Support';
+    } else if (type === "graphFreedom") {
+      label = 'Freedom';
+    } else if (type === "graphGenerosity") {
+      label = 'Generosity';
+    } else if (type === "graphLifeExpectancy") {
+      label = 'Life Expectancy';
+    } else if (type === 'graphGdp') {
+      label = 'GDP Per Capita ($)';
+    }
+    this.chart.select(".x-axis-label").text(`${label}`);
   }
 }
 
