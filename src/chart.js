@@ -10,7 +10,6 @@ import {
 class Chart {
   constructor(selector, options) {
     this.setChart(selector, options);
-    // this.getData();
     this.setLabels();
   }
 
@@ -33,7 +32,6 @@ class Chart {
   }
 
   redraw(selector) {
-    // let graphDiv = document.querySelector("svg.graph");
     let width = window.innerWidth;
     console.log(`new width: ${width}`)
     let height = window.innerHeight;
@@ -98,47 +96,6 @@ class Chart {
       .attr("text-anchor", "middle")
       .text("Happiness Index (%)");
   }
-
-  // gridLines(scale, position, ticks = 5) {
-  //   this.chart
-  //     .append("g")
-  //     .attr("class", "grid")
-  //     .call(d3[position])()
-  //     .scale(scale)
-  //     .tickSize(WIDTH, 0, 0)
-  //     .tickFormat("")
-  //     .ticks(ticks);
-  // }
-
-  // rectangleLabels(text) {
-  //   this.chart
-  //     .selectAll()
-  //     .data(this.sortedData)
-  //     .enter()
-  //     .append("text")
-  //     .attr("class", d => `city ${d.class} bar-label city-data-toggle`)
-  //     .attr("x", 5)
-  //     .attr("y", d => this.yScale(d.city) - 2)
-  //     .style("fill", "#fff")
-  //     .text((d, i) => {
-  //       if (typeof text === "string") {
-  //         return d[text];
-  //       } else {
-  //         return text.call(d, i);
-  //       }
-  //     })
-  //     .style("opacity", 0);
-  // }
-
-  // labelTop(text) {
-  //   this.chart
-  //     .append("text")
-  //     .attr("class", "label-text")
-  //     .attr("text-anchor", "middle")
-  //     .attr("x", WIDTH / 2)
-  //     .attr("y", -20)
-  //     .text(text);
-  // }
 }
 
 export default Chart;
