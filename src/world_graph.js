@@ -19,7 +19,7 @@ class WorldGraph extends Chart {
 
   getData(metric) {
     let that = this;
-    d3.json("/dist/data/countries.json").then(data => {
+    d3.json("dist/data/countries.json").then(data => {
       that.setData(data);
       that.circles(metric);
     });
@@ -217,7 +217,7 @@ class WorldGraph extends Chart {
   }
 
   updateData(dataType) {
-    d3.json("/dist/data/countries.json").then(data => {
+    d3.json("dist/data/countries.json").then(data => {
       this.chart
         .selectAll(".country-bubble")
         .transition()
