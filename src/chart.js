@@ -62,12 +62,12 @@ class Chart {
     if (yScale === "scaleBand") {
       this.yScale = d3[yScale]()
         .domain(domain)
-        .range([0, HEIGHT - 50])
+        .range([0, HEIGHT])
         .padding(0.8);
     } else {
       this.yScale = d3[yScale]()
         .domain(domain)
-        .range([0, HEIGHT - 50]);
+        .range([0, HEIGHT]);
     }
 
     this.chart.append("g").call(
