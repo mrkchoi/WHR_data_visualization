@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     let currentBtn = e.target;
     let currentBtnClass = currentBtn.classList[0].split("-")[1];
-    console.log(currentBtnClass);
-    worldGraph.updateData(currentBtnClass);
+    // console.log(currentBtnClass);
+    if (currentBtnClass !== 'group') {
+      worldGraph.updateData(currentBtnClass);
+    }
   });
 });
 
 window.onresize = () => {
   worldGraph.redraw("svg.graph");
-  console.log('resized!');
+  // console.log('resized!');
 };
