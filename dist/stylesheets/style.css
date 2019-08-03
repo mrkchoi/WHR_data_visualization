@@ -135,3 +135,7 @@ p.tooltip__detail {
 .header__link i {
   font-size: 2rem;
 }
+
+i.fab.fa-angellist {
+  font-size: 1.9rem;
+}
