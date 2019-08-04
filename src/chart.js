@@ -20,13 +20,13 @@ class Chart {
       .select(selector)
       .attr("height", HEIGHT + MARGINS * 2)
       .attr("width", WIDTH + MARGINS * 2);
-      // .attr("height", HEIGHT + MARGINS * 2)
-      // .attr("width", WIDTH + MARGINS * 2);
-      // .attr("preserveAspectRatio", "xMinYMin meet")
-      // .attr("viewBox", "0 0 960 500");
+    // .attr("height", HEIGHT + MARGINS * 2)
+    // .attr("width", WIDTH + MARGINS * 2);
+    // .attr("preserveAspectRatio", "xMinYMin meet")
+    // .attr("viewBox", "0 0 960 500");
     this.chart = svg
       .append("g")
-      .attr("position", 'relative')
+      .attr("position", "relative")
       .attr(
         "transform",
         `translate(${MARGINS + options.leftOffset}, ${MARGINS / 2 +
@@ -38,16 +38,19 @@ class Chart {
     this.data = data;
   }
 
-  // redraw(selector) {
-  //   let parentDiv = document.querySelector('.graph__container');
-
-  //   let width = parentDiv.clientWidth;
-  //   console.log(`new width: ${width}`)
-  //   let height = parentDiv.clientHeight;
-  //   console.log(`new height: ${height}`)
-  //   d3.select(selector)
-  //     .attr('width', width + MARGINS * 2)
-  //     .attr('height', height + MARGINS * 2);
+  // redraw(selector, options = { topOffset: 0, leftOffset: 0 }) {
+  //   const svg = d3
+  //     .select(selector)
+  //     .attr("height", HEIGHT + MARGINS * 2)
+  //     .attr("width", WIDTH + MARGINS * 2);
+  //   this.chart = svg
+  //     .append("g")
+  //     .attr("position", "relative")
+  //     .attr(
+  //       "transform",
+  //       `translate(${MARGINS + options.leftOffset}, ${MARGINS / 2 +
+  //         options.topOffset})`
+  //     );
   // }
 
   xAxis(ticks = 20, tickFormat = () => {}) {
@@ -97,7 +100,7 @@ class Chart {
       .attr("font-weight", "600")
       .attr("text-anchor", "middle")
       .text("GDP Per Capita ($)");
-      console.log(`height: ${HEIGHT}`);
+    console.log(`height: ${HEIGHT}`);
     var yLabel = this.chart
       .append("g")
       .attr("class", "yAxisGroup")
@@ -107,7 +110,7 @@ class Chart {
       .attr("x", -(HEIGHT / 2))
       .attr("y", -50)
       .attr("font-size", "18px")
-      .attr('font-weight', "600")
+      .attr("font-weight", "600")
       .attr("text-anchor", "middle")
       .text("Happiness Index (%)");
   }
