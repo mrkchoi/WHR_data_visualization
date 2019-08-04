@@ -10,10 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   btnGroup.addEventListener("mousedown", e => {
     e.preventDefault();
     let currentBtn = e.target;
-    let currentBtnClass = currentBtn.classList[0].split("-")[1];
-    if (currentBtnClass !== 'group') {
+    let currentBtnType = currentBtn.classList[1];
+    let currentBtnClass;
+    if (currentBtnType === "header-graph__btn") {
+      currentBtnClass = currentBtn.classList[0].split("-")[1];
+    }
+
+    if (currentBtnType === "header-graph__btn") {
       worldGraph.updateData(currentBtnClass);
-      let allBtns = btnGroup.querySelectorAll('a');
+      let allBtns = btnGroup.querySelectorAll("a");
       allBtns.forEach(btn => {
         btn.classList.remove("active");
       });
