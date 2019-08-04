@@ -100,7 +100,6 @@ class Chart {
       .attr("font-weight", "600")
       .attr("text-anchor", "middle")
       .text("GDP Per Capita ($)");
-    console.log(`height: ${HEIGHT}`);
     var yLabel = this.chart
       .append("g")
       .attr("class", "yAxisGroup")

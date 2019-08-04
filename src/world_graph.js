@@ -25,6 +25,17 @@ class WorldGraph extends Chart {
     });
   }
 
+  formatOrdinal(num) {
+    const int = parseInt(num),
+      digits = [int % 10, int % 100],
+      ordinals = ['st', 'nd', 'rd', 'th'],
+      oPattern = [1, 2, 3, 4],
+      tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+    return oPattern.includes(digits[0]) && !tPattern.includes(digits[1])
+      ? int + ordinals[digits[0] - 1]
+      : int + ordinals[3];
+  };
+
   circles(metric) {
     ////////////////////////
     // tooltip
@@ -42,6 +53,7 @@ class WorldGraph extends Chart {
       .style("position", "absolute")
       .style("display", "block");
 
+    let that = this;
     let showTooltip = function(d) {
       tooltip.transition().duration(200);
       tooltip
@@ -49,7 +61,7 @@ class WorldGraph extends Chart {
         .html(
           `
   <strong>Country:</strong> ${d.country} (${d.continent})<br/>
-  <strong>Happiness Ranking:</strong> ${d.ranking}
+  <strong>Happiness Ranking:</strong> ${that.formatOrdinal(d.ranking)}
 `
         )
         .style("top", d3.event.clientY - 100 + "px")
@@ -58,14 +70,12 @@ class WorldGraph extends Chart {
 
     let moveTooltip = function(d) {
       showTooltip(d);
-      console.log("move tooltip");
       tooltip
         .style("top", d3.event.clientY - 100 + "px")
         .style("left", d3.event.clientX - 160 + "px");
     };
 
     let hideTooltip = function(d) {
-      console.log("hide tooltip");
       tooltip
         .transition()
         .duration(200)
@@ -237,7 +247,6 @@ class WorldGraph extends Chart {
 
   updateAxisLabel(type) {
     // xLabel
-    console.log(type);
     let label;
     if (type === 'graphSocialSupport') {
       label = 'Social Support';
