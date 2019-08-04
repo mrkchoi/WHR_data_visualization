@@ -14,12 +14,19 @@ class Chart {
   }
 
   setChart(selector, options = { topOffset: 0, leftOffset: 0 }) {
+    // let HEIGHT = window.clientHeight;
+    // let WIDTH = window.clientWidth;
     const svg = d3
       .select(selector)
       .attr("height", HEIGHT + MARGINS * 2)
       .attr("width", WIDTH + MARGINS * 2);
+      // .attr("height", HEIGHT + MARGINS * 2)
+      // .attr("width", WIDTH + MARGINS * 2);
+      // .attr("preserveAspectRatio", "xMinYMin meet")
+      // .attr("viewBox", "0 0 960 500");
     this.chart = svg
       .append("g")
+      .attr("position", 'relative')
       .attr(
         "transform",
         `translate(${MARGINS + options.leftOffset}, ${MARGINS / 2 +
@@ -31,15 +38,17 @@ class Chart {
     this.data = data;
   }
 
-  redraw(selector) {
-    let width = window.innerWidth;
-    console.log(`new width: ${width}`)
-    let height = window.innerHeight;
-    console.log(`new height: ${height}`)
-    d3.select(selector)
-      .attr('width', width + MARGINS * 2)
-      .attr('height', height + MARGINS * 2);
-  }
+  // redraw(selector) {
+  //   let parentDiv = document.querySelector('.graph__container');
+
+  //   let width = parentDiv.clientWidth;
+  //   console.log(`new width: ${width}`)
+  //   let height = parentDiv.clientHeight;
+  //   console.log(`new height: ${height}`)
+  //   d3.select(selector)
+  //     .attr('width', width + MARGINS * 2)
+  //     .attr('height', height + MARGINS * 2);
+  // }
 
   xAxis(ticks = 20, tickFormat = () => {}) {
     this.xScale = d3
@@ -84,16 +93,21 @@ class Chart {
       .attr("class", "x-axis-label")
       .attr("y", HEIGHT + 50)
       .attr("x", WIDTH / 2)
-      .attr("font-size", "32px")
+      .attr("font-size", "18px")
+      .attr("font-weight", "600")
       .attr("text-anchor", "middle")
       .text("GDP Per Capita ($)");
+      console.log(`height: ${HEIGHT}`);
     var yLabel = this.chart
       .append("g")
+      .attr("class", "yAxisGroup")
       .append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", -65)
-      .attr("x", -300)
-      .attr("font-size", "32px")
+      // .attr("position", 'relative')
+      .attr("x", -(HEIGHT / 2))
+      .attr("y", -50)
+      .attr("font-size", "18px")
+      .attr('font-weight', "600")
       .attr("text-anchor", "middle")
       .text("Happiness Index (%)");
   }

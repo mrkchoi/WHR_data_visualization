@@ -162,7 +162,11 @@ class WorldGraph extends Chart {
       .enter()
       .append("g")
       .attr("class", "legend")
-      .attr("transform", "translate(" + 870 + "," + 480 + ")");
+      .attr("position", "absolute")
+      // .attr("bottom", 0)
+      // .attr("right", 0);
+      .attr("transform", `translate(${WIDTH - 130}, ${HEIGHT - 120})`);
+      // .attr("transform", `translate(970, 480)`);
 
     legend
       .append("rect")

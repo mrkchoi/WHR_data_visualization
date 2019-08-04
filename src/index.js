@@ -4,6 +4,7 @@ import WorldGraph from "./world_graph";
 let worldGraph;
 document.addEventListener("DOMContentLoaded", () => {
   worldGraph = new WorldGraph("svg.graph");
+  // worldGraph.redraw("svg.graph");
 
   let btnGroup = document.querySelector(".btn-group");
   btnGroup.addEventListener("mousedown", e => {
@@ -16,6 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.onresize = () => {
-  worldGraph.redraw("svg.graph");
-};
+// window.onresize = () => {
+//   worldGraph.redraw("svg.graph");
+// };

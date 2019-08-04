@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="./dist/assets/images/favicon-heart-whr.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 <link
@@ -16,31 +17,51 @@
 </head>
 <body>
   <div class="main__container--full">
-    <div class="main__container--inner">
-      <div class="header__container">
-        <div class="header__content">
-          <h1 class="main__header">World Happiness Report</h1>     
-          <p class="main__description">
-            The World Happiness Report is a landmark survey of the state of global happiness that ranks 156 countries by how happy
-            their citizens perceive themselves to be.
-          </p>
-          <p class="main__description">
-            This year’s World Happiness Report focuses on happiness and the community: how happiness has evolved over the past dozen years, with a focus on the technologies, social norms, conflicts and government policies that have driven those changes.
-          </p>
+    <div class="header__container">
+      <div class="header__content">
+        <h1 class="main__header">World <br />Happiness <br />Report <span><img src="./dist/assets/images/whr-heart.png" alt="whr logo heart" class="header__img"></span></h1>     
+      </div>
+      <div class="header">
+        <div class="header__btn-group btn-group">
+          <a href="#" class="btn-graphGdp header-graph__btn">GDP per capita</a>
+          &nbsp;&nbsp;
+          <a href="#" class="btn-graphSocialSupport header-graph__btn">Social Support</a>
+          &nbsp;&nbsp;
+          <a href="#" class="btn-graphFreedom header-graph__btn">Freedom</a>
+          &nbsp;&nbsp;
+          <a href="#" class="btn-graphGenerosity header-graph__btn">Generosity</a>
+          &nbsp;&nbsp;
+          <a href="#" class="btn-graphLifeExpectancy header-graph__btn">Life Expectancy</a>
+          &nbsp;&nbsp;
         </div>
-        <div class="header">
-          <div class="header__link-wrapper">
-            <a href="https://www.linkedin.com/in/kenneth-choi-42502a35/" class="header__link" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/mrkchoi/city_visualizer" target="_blank" class="header__link">
-              <i class="fab fa-github-square"></i>
-            </a>
-            <a href="https://angel.co/kenneth-choi-1?public_profile=1" target="_blank" class="header__link">
-              <i class="fab fa-angellist"></i>
-            </a>
-          </div>
+        <div class="header__link-wrapper">
+          <a href="https://www.linkedin.com/in/kenneth-choi-42502a35/" class="header__link" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/mrkchoi/city_visualizer" target="_blank" class="header__link">
+            <i class="fab fa-github-square"></i>
+          </a>
+          <a href="https://angel.co/kenneth-choi-1?public_profile=1" target="_blank" class="header__link">
+            <i class="fab fa-angellist"></i>
+          </a>
         </div>
+      </div>
+    </div>
+
+      <div class="graph__container">
+        <svg class="graph"></svg>
+      </div>
+    <!-- <div class="main__container--inner">
+      <div class="text">
+        <p class="main__description">
+          The World Happiness Report is a landmark survey of the state of global happiness that ranks 156 countries by how happy
+          their citizens perceive themselves to be.
+        </p>
+        <p class="main__description">
+          This year’s World Happiness Report focuses on happiness and the community: how happiness has evolved over the past
+          dozen years, with a focus on the technologies, social norms, conflicts and government policies that have driven those
+          changes.
+        </p>
       </div>
       <div class="sources">
         <p class="source__content">
@@ -51,23 +72,9 @@
         <br />
       </div>
 
-      <div class="graph__container">
-        <svg class="graph"></svg>
-      </div>
 
-      <div class="btn-group">
-        <a href="#" class="btn-graphGdp">GDP per capita</a> 
-        &nbsp;&nbsp;
-        <a href="#" class="btn-graphSocialSupport">Social Support</a>
-        &nbsp;&nbsp;
-        <a href="#" class="btn-graphFreedom">Freedom</a>
-        &nbsp;&nbsp;
-        <a href="#" class="btn-graphGenerosity">Generosity</a>
-        &nbsp;&nbsp;
-        <a href="#" class="btn-graphLifeExpectancy">Life Expectancy</a>
-        &nbsp;&nbsp;
-      </div>
-    </div>  
+    </div>   -->
+
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
   <script src="https://d3js.org/d3-format.v1.min.js"></script>

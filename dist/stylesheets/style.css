@@ -2,7 +2,7 @@
 body {
   font-family: "Work Sans", sans-serif;
   font-size: 16px;
-  background-color: #fcfdef;
+  /* background-color: #fcfdef; */
   position: relative;
 }
 
@@ -21,7 +21,9 @@ h1, h2, h3, h4, h5, h6 {
 .header__container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  /* box-shadow: 0px 0px 15px rgba(0,0,0,.08); */
 }
 .header__content {
   flex: 1;
@@ -32,9 +34,43 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 320px;
 }
 .main__header {
-  font-size: 4rem;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
   color: initial;
   transition: all 100ms ease-in;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__btn-group {
+  margin-right: 2rem;
+}
+
+.header-graph__btn {
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 100ms ease-in;
+  border-bottom: 2px solid transparent;
+
+}
+
+.header-graph__btn:hover {
+  border-bottom: 2px solid #b62840;
+  text-decoration: none;
+  color: #000;
+
+}
+
+.header__img {
+  width: 21px;
 }
 
 .main__description {
@@ -43,8 +79,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .graph__container {
-  position: relative;
+  /* position: relative;
   top: 24px;
+  width: 100%;
+  height: 100%; */
+
+
+  height: calc(100vh - 100px);
+  width: calc(100vw);
+  display: block;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 /* svg */
@@ -57,10 +104,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-text {
+/* text {
   fill: #777;
   font-size: 12px;
-}
+} */
 
 .map-city-label {
   cursor: pointer;
