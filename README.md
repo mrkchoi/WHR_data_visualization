@@ -25,7 +25,7 @@ Visualization created by Kenneth Choi .
 * Users can develop correlation hypotheses on GDP, social support, generosity, freedom, life expectancy and population
 * Users can filter data by both continent and metrics from individual countries
 
-## Chart
+## Data Chart (D3.js)
 
 Clean and modular code through use of ES6 classes and inheritance.
 
@@ -80,7 +80,6 @@ class WorldGraph extends Chart {
 
 
 ```
-## Map
 
 ## Future Plans
 Some features I plan on implement in the future are:
