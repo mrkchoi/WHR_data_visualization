@@ -56,17 +56,22 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: 700;
   transition: all 100ms ease-in;
   border-bottom: 2px solid transparent;
-
+  
 }
 
 .header-graph__btn:hover {
   border-bottom: 2px solid #b62840;
   text-decoration: none;
   color: #000;
+}
 
+.header-graph__btn.active {
+  border-bottom: 2px solid #b62840;
+  text-decoration: none;
+  text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+  color: #000;
 }
 
 .header__img {
@@ -74,7 +79,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main__description {
-  font-family: "Lora", sans-serif;
+  font-family: "Work Sans", sans-serif;
+  
   margin-bottom: 10px;
 }
 
@@ -132,17 +138,20 @@ text.city {
 
 @keyframes bounce {
   from { transform: translateY(0) }
-  to { transform: translateY(-2px) }
+  to { transform: translateY(-3px) }
 }
 
-.city-pinpoint {
+/* .city-pinpoint {
   animation: bounce 0.5s infinite;
   animation-direction: alternate;
   transform-origin: 50% 50% 0;
-}
+} */
 
 .country-bubble {
   transition: all 100ms ease-in;
+  /* animation: bounce 0.5s infinite;
+  animation-direction: alternate;
+  transform-origin: 50% 50% 0; */
 }
 
 .country-bubble:hover {
@@ -185,4 +194,77 @@ p.tooltip__detail {
 
 i.fab.fa-angellist {
   font-size: 1.9rem;
+}
+
+
+/* modal */
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,.8);
+  z-index: 9999999;
+  transition: all 150ms ease-in;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem 4rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* text-align: center; */
+  transition: all 150ms ease-in;
+}
+
+.modal-close__btn {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 1rem;
+  transition: all 200ms ease-in;
+}
+
+.modal-close__btn:hover {
+  color: #b62840;
+  transform: rotate(-90deg);
+} 
+
+.modal .main__header {
+  margin-bottom: 4rem;
+}
+
+.modal .text {
+  margin-bottom: 4rem;
+}
+
+.main__description {
+  font-size: 1.4rem;
+}
+
+.source__link {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 100ms ease-in;
+  border-bottom: 2px solid transparent;
+  
+}
+
+.source__link:hover {
+  border-bottom: 2px solid #b62840;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
 }

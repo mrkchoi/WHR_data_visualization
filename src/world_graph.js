@@ -174,8 +174,8 @@ class WorldGraph extends Chart {
       .attr("y", function(d, i) {
         return 20 * i;
       })
-      .attr("width", 15)
-      .attr("height", 15)
+      .attr("width", 20)
+      .attr("height", 20)
       .style("fill", function(d) {
         if (d.continent === "Africa") {
           return "#7cbd1e";

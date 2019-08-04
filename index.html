@@ -16,6 +16,37 @@
   <title>World Happiness Report | Data Visualization</title>
 </head>
 <body>
+  <div class="modal-bg">
+    <div class="modal">
+      <div class="modal-close__btn"><i class="modal-close__btn-single fa fa-times"></i></div>
+      <h1 class="main__header">World <br />Happiness <br />Report <span><img src="./dist/assets/images/whr-heart.png"
+            alt="whr logo heart" class="header__img"></span>
+      </h1>
+      <div class="text">
+        <p class="main__description">
+          The <strong>World Happiness Report</strong> is a landmark survey of the state of global happiness that ranks <strong>156 countries</strong> by how happy their citizens perceive themselves to be.
+        </p>
+        <p class="main__description">
+          This year’s World Happiness Report focuses on <strong>happiness and the community</strong>: how happiness has evolved over the past
+          dozen years, with a focus on the technologies, social norms, conflicts and government policies that have driven
+          those changes.
+        </p>
+        <p class="main__description">
+          This tool allows you to explore the study, customize the statistics, and share the facts.
+        </p>
+      </div>
+      <br>
+      <div class="sources">
+        <p class="source__content">
+          Data provided by <a href="https://worldhappiness.report/ed/2019/" target="_blank" class="source__link">World
+            Happiness Report</a> and <a href="http://worldpopulationreview.com/" target="_blank" class="source__link">World
+            Population Review</a><br />Visualization created by <a href="https://www.kchoi.io" class="source__link">Kenneth Choi</a>
+        </p>
+        <br />
+      </div>
+    </div>
+
+  </div>
   <div class="main__container--full">
     <div class="header__container">
       <div class="header__content">
@@ -23,15 +54,15 @@
       </div>
       <div class="header">
         <div class="header__btn-group btn-group">
-          <a href="#" class="btn-graphGdp header-graph__btn">GDP per capita</a>
+          <a href="#" data-text="GDP per capita" class="btn-graphGdp header-graph__btn active">GDP per capita</a>
           &nbsp;&nbsp;
-          <a href="#" class="btn-graphSocialSupport header-graph__btn">Social Support</a>
+          <a href="#" data-text="Social Support" class="btn-graphSocialSupport header-graph__btn">Social Support</a>
           &nbsp;&nbsp;
-          <a href="#" class="btn-graphFreedom header-graph__btn">Freedom</a>
+          <a href="#" data-text="Freedom" class="btn-graphFreedom header-graph__btn">Freedom</a>
           &nbsp;&nbsp;
-          <a href="#" class="btn-graphGenerosity header-graph__btn">Generosity</a>
+          <a href="#" data-text="Generosity" class="btn-graphGenerosity header-graph__btn">Generosity</a>
           &nbsp;&nbsp;
-          <a href="#" class="btn-graphLifeExpectancy header-graph__btn">Life Expectancy</a>
+          <a href="#" data-text="Life Expectancy" class="btn-graphLifeExpectancy header-graph__btn">Life Expectancy</a>
           &nbsp;&nbsp;
         </div>
         <div class="header__link-wrapper">
@@ -48,33 +79,9 @@
       </div>
     </div>
 
-      <div class="graph__container">
-        <svg class="graph"></svg>
-      </div>
-    <!-- <div class="main__container--inner">
-      <div class="text">
-        <p class="main__description">
-          The World Happiness Report is a landmark survey of the state of global happiness that ranks 156 countries by how happy
-          their citizens perceive themselves to be.
-        </p>
-        <p class="main__description">
-          This year’s World Happiness Report focuses on happiness and the community: how happiness has evolved over the past
-          dozen years, with a focus on the technologies, social norms, conflicts and government policies that have driven those
-          changes.
-        </p>
-      </div>
-      <div class="sources">
-        <p class="source__content">
-          Data provided by <a href="https://worldhappiness.report/ed/2019/" target="_blank" class="source__link">World
-            Happiness Report</a> and <a href="http://worldpopulationreview.com/" target="_blank" class="source__link">World
-            Population Review</a><br />Visualization created by Kenneth Choi
-        </p>
-        <br />
-      </div>
-
-
-    </div>   -->
-
+    <div class="graph__container">
+      <svg class="graph"></svg>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
   <script src="https://d3js.org/d3-format.v1.min.js"></script>
