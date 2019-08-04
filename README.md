@@ -76,10 +76,9 @@ class WorldGraph extends Chart {
   }
   // ..
 }
-
-
-
 ```
+
+A reusable parent class was implemented to initialize the base D3.js visualization with the rendering graph inheriting from the Chart class.
 
 ## Future Plans
 Some features I plan on implement in the future are:
