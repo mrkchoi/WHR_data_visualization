@@ -26,7 +26,7 @@ Visualization created by Kenneth Choi .
 * Users can filter data by both continent and metrics from individual countries
 
 ## Chart
-```
+```javascript
 import {
   HEIGHT,
   MARGINS,
