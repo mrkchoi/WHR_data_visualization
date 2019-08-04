@@ -78,7 +78,7 @@ class WorldGraph extends Chart {
 }
 ```
 
-A reusable parent class was implemented to initialize the base D3.js visualization with the rendering graph inheriting from the Chart class.
+A parent class, `Chart`, was implemented to initialize the base configuration for the (D3.js) visualization. The rendered data graph was refactored into a child class `WorldGraph`, inheriting from the `Chart` class.
 
 ## Future Plans
 Some features I plan on implement in the future are:
