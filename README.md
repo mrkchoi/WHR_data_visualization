@@ -7,8 +7,8 @@ This year's World Happiness Report focuses on happiness and the community: how h
 
 This tool allows you to explore the study, customize the statistics, and share the facts.  
 
-Data provided by [World Happiness Report](https://worldhappiness.report/) and [World Population Review](http://worldpopulationreview.com/) . 
-Visualization created by [Kenneth Choi](https://www.kchoi.io). 
+Data provided by [World Happiness Report](https://worldhappiness.report/) and [World Population Review](http://worldpopulationreview.com/).   
+Visualization created by [Kenneth Choi](https://www.kchoi.io).  
 
 ## Technologies
 * D3.js
