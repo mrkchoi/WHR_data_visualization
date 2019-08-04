@@ -119,9 +119,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main__description {
-  font-family: "Work Sans", sans-serif;
-  
-  margin-bottom: 10px;
+  /* font-family: "Work Sans", sans-serif; */
+  font-family: "Lora", sans-serif;
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
 }
 
 .graph__container {
