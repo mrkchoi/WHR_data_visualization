@@ -80,6 +80,39 @@ class WorldGraph extends Chart {
 
 A parent class, `Chart`, was implemented to initialize the base configuration for the (D3.js) visualization. The rendered data graph was refactored into a child class `WorldGraph`, inheriting from the `Chart` class.
 
+
+## Data (JSON)
+
+Data was aggregated from multiple sources and formatted into JSON. The JSON file is loaded asynchronously into the D3 visualization.
+
+```
+{
+  "LUXEMBOURG": {
+      "continent": "Europe",
+      "country": "Luxembourg",
+      "class": "city-Luxembourg",
+      "graphRanking": 143,
+      "ranking": 14,
+      "graphSocialSupport": 130,
+      "socialSupport": 27,
+      "graphFreedom": 129,
+      "freedom": 28,
+      "graphGenerosity": 127,
+      "generosity": 30,
+      "graphGdp": 155,
+      "gdp": 2,
+      "graphLifeExpectancy": 141,
+      "lifeExpectancy": 16,
+      "population": 616596
+    },
+  "UNITED_KINGDOM": {
+    // ..
+  },
+  // ..
+}
+```
+
+
 ## Future Plans
 Some features I plan on implement in the future are:
 
