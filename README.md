@@ -85,7 +85,7 @@ A parent class, `Chart`, was implemented to initialize the base configuration fo
 
 Data was aggregated from multiple sources and formatted into JSON. The JSON file is loaded asynchronously into the D3 visualization.
 
-```
+```javascript
 {
   "LUXEMBOURG": {
       "continent": "Europe",
