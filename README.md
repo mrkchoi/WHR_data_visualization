@@ -12,7 +12,7 @@ Visualization created by [Kenneth Choi](https://www.kchoi.io).
 
 ## Screenshots
 
-![]("https://mrkchoi.github.io/WHR_data_visualization/dist/assets/screenshots/screen_test-02.gif")
+![World Happiness Report screenshot](https://mrkchoi.github.io/WHR_data_visualization/dist/assets/screenshots/screen_test-02.gif)
 
 ## Technologies
 * D3.js
