@@ -14,16 +14,10 @@ class Chart {
   }
 
   setChart(selector, options = { topOffset: 0, leftOffset: 0 }) {
-    // let HEIGHT = window.clientHeight;
-    // let WIDTH = window.clientWidth;
     const svg = d3
       .select(selector)
       .attr("height", HEIGHT + MARGINS * 2)
       .attr("width", WIDTH + MARGINS * 2);
-    // .attr("height", HEIGHT + MARGINS * 2)
-    // .attr("width", WIDTH + MARGINS * 2);
-    // .attr("preserveAspectRatio", "xMinYMin meet")
-    // .attr("viewBox", "0 0 960 500");
     this.chart = svg
       .append("g")
       .attr("position", "relative")
