@@ -10,6 +10,10 @@ This tool allows you to explore the study, customize the statistics, and share t
 Data provided by [World Happiness Report](https://worldhappiness.report/) and [World Population Review](http://worldpopulationreview.com/).   
 Visualization created by [Kenneth Choi](https://www.kchoi.io).  
 
+## Screenshots
+
+![]("https://mrkchoi.github.io/WHR_data_visualization/dist/assets/screenshots/screen_test-02.gif")
+
 ## Technologies
 * D3.js
 * JavaScript (ES6)
@@ -17,8 +21,6 @@ Visualization created by [Kenneth Choi](https://www.kchoi.io).
 * Babel
 * HTML5
 * CSS3
-
-## Screenshots
 
 ## Features
 * Users can interact with the individual data points to see further data on each country
