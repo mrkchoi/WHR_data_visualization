@@ -52,7 +52,7 @@ class Chart {
     this.xScale = d3
       .scaleLinear()
       .range([0, WIDTH])
-      .domain([0, 1]);
+      // .domain([0, 1]);
     let xAxisCall = d3
       .axisBottom(this.xScale)
       .ticks(ticks)
