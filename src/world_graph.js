@@ -1,6 +1,7 @@
 import {
   WIDTH,
   HEIGHT,
+  MARGINS,
   ANIMATION_DELAY,
   ANIMATION_EASING,
   ANIMATION_DURATION
@@ -81,6 +82,58 @@ class WorldGraph extends Chart {
         .duration(200)
         .style("visibility", "hidden");
     };
+
+
+    ////////////////////////
+    // cursor position lines
+    ////////////////////////
+    // var vertical = d3.select('.graph')
+    //   .append("line")
+    //   .attr("class", "vertical")
+    //   .style("stroke", "black")
+    //   .style("position", "relative")
+    //   .style("z-index", "-10");
+
+    // var horizontal = d3.select('.graph')
+    //   .append("line")
+    //   .attr("class", "horizontal")
+    //   .style("stroke", "black")
+    //   .style("position", "relative")
+    //   .style("z-index", "-10");
+
+    // this.chart
+    //   // .selectAll("circle")
+    //   .on("mousemove", function() {
+    //     let mouse = d3.mouse(this);
+    //     let mouseX = mouse[0];
+    //     let mouseY = mouse[1];
+    //     vertical
+    //       .attr("x1", `${mouseX + MARGINS - 5}px`)
+    //       .attr("x2", `${mouseX + MARGINS - 5}px`)
+    //       .attr("y1", `${HEIGHT + (MARGINS / 2) + 2}px`)
+    //       .attr("y2", `${mouseY + (MARGINS / 2) + 2}px`);
+    //     horizontal
+    //       .attr("y1", `${mouseY + (MARGINS / 2) + 2}px`)
+    //       .attr("y2", `${mouseY + (MARGINS / 2) + 2}px`)
+    //       .attr("x1", `${0 + MARGINS - 5}px`)
+    //       .attr("x2", `${mouseX + MARGINS - 5}px`);
+    //   })
+    //   .on("mouseover", function() {
+    //     let mouse = d3.mouse(this);
+    //     let mouseX = mouse[0];
+    //     let mouseY = mouse[1];
+    //     vertical
+    //       .attr("x1", `${mouseX + MARGINS - 5}px`)
+    //       .attr("x2", `${mouseX + MARGINS - 5}px`)
+    //       .attr("y1", `${HEIGHT + MARGINS / 2 + 2}px`)
+    //       .attr("y2", `${mouseY + MARGINS / 2 + 2}px`);
+    //     horizontal
+    //       .attr("y1", `${mouseY + MARGINS / 2 + 2}px`)
+    //       .attr("y2", `${mouseY + MARGINS / 2 + 2}px`)
+    //       .attr("x1", `${0 + MARGINS - 5}px`)
+    //       .attr("x2", `${mouseX + MARGINS - 5}px`);
+    //   });
+
     ////////////////////////
     // chart rendering
     ////////////////////////

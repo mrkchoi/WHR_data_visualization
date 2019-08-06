@@ -21,6 +21,7 @@ class Chart {
     this.chart = svg
       .append("g")
       .attr("position", "relative")
+      .attr("class", "main__svg")
       .attr(
         "transform",
         `translate(${MARGINS + options.leftOffset}, ${MARGINS / 2 +
