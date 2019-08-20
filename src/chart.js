@@ -33,21 +33,6 @@ class Chart {
     this.data = data;
   }
 
-  // redraw(selector, options = { topOffset: 0, leftOffset: 0 }) {
-  //   const svg = d3
-  //     .select(selector)
-  //     .attr("height", HEIGHT + MARGINS * 2)
-  //     .attr("width", WIDTH + MARGINS * 2);
-  //   this.chart = svg
-  //     .append("g")
-  //     .attr("position", "relative")
-  //     .attr(
-  //       "transform",
-  //       `translate(${MARGINS + options.leftOffset}, ${MARGINS / 2 +
-  //         options.topOffset})`
-  //     );
-  // }
-
   xAxis(ticks = 20, tickFormat = () => {}) {
     this.xScale = d3
       .scaleLinear()
